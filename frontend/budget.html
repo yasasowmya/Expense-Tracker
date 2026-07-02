@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<h1>Personal Finance Manager</h1>
+
+<ul>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="expense.html">Expenses</a></li>
+<li><a href="budget.html">Budget</a></li>
+<li><a href="reports.html">Reports</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="index.html">Logout</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Monthly Budget</h2>
+
+<input
+type="number"
+id="salary"
+placeholder="Enter Monthly Salary">
+
+<input
+type="number"
+id="budget"
+placeholder="Enter Monthly Budget">
+
+<input
+type="number"
+id="savingGoal"
+placeholder="Enter Saving Goal">
+
+<button id="saveBudgetBtn">
+
+Save Budget
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Budget Summary</h2>
+
+<p><strong>Monthly Salary:</strong> ₹<span id="showSalary">0</span></p>
+
+<p><strong>Monthly Budget:</strong> ₹<span id="showBudget">0</span></p>
+
+<p><strong>Saving Goal:</strong> ₹<span id="showSaving">0</span></p>
+
+</div>
+
+</div>
+
+<script src="budget.js"></script>
+
+</body>
+
+</html>

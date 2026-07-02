@@ -1,0 +1,586 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+body{
+    background:#f8f8ff;
+    color:#1e293b;
+}
+
+/* Header */
+
+header{
+    background:#FFFFFF;
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav h1{
+    font-size:52px;
+    color:#1f2a56;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#475569;
+    font-size:20px;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#16a34a;
+}
+
+/* Container */
+
+.container{
+    width:92%;
+    max-width:1450px;
+    margin:50px auto;
+}
+
+h2{
+    color:#1f2a56;
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+/* Dashboard */
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    margin-bottom:40px;
+}
+
+/* Card */
+
+.card{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:16px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+
+    transition:.3s;
+
+    min-height:130px;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card h3{
+
+    color:#334155;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-top:5px;
+
+}
+
+.card h1,
+#totalExpense,
+#monthlyBudget,
+#remainingBudget,
+#todayExpense,
+#monthExpense,
+.amount{
+    color:#111827 !important;
+    font-weight:500;
+}
+
+/* Inputs */
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:12px;
+
+    background:#ffffff;
+
+    font-size:17px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:#16a34a;
+
+    box-shadow:0 0 0 4px rgba(22,163,74,.1);
+
+}
+
+textarea{
+
+    resize:none;
+
+}
+
+/* Buttons */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#56B8B2,#79C9B9);
+
+    color:#FFFFFF;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(22,163,74,.25);
+
+}
+
+/* Tables */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+
+    background:white;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+table th{
+
+    background:#f4f2ff;
+
+    color:#1f2a56;
+
+    padding:18px;
+
+    font-size:18px;
+
+    text-align:left;
+
+}
+
+table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #eef2f7;
+
+    font-size:17px;
+
+}
+
+table tr:hover{
+
+    background:#fafbff;
+
+}
+
+/* Expense Values */
+
+#totalExpense{
+
+    color:#16a34a;
+
+}
+
+#monthlyBudget{
+
+    color:#2563eb;
+
+}
+
+#remainingBudget{
+
+    color:#ea580c;
+
+}
+
+#totalTransactions{
+
+    color:#7c3aed;
+
+}
+
+/* Search */
+
+#searchExpense{
+
+    margin-bottom:15px;
+
+}
+
+/* Charts */
+
+#pieChart{
+
+    max-width:320px;
+
+    max-height:320px;
+
+    margin:30px auto;
+
+    display:block;
+
+}
+
+#lineChart{
+
+    width:100%;
+
+    max-height:320px;
+
+    margin:30px auto;
+
+}
+
+/* Footer */
+
+footer{
+    color:#6B7280;
+    background:transparent;
+}
+
+/* -----------------------------
+   Card Hover Animation
+------------------------------*/
+
+.card{
+    transition:all 0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.10);
+}
+
+/* -----------------------------
+   Navigation Active Effect
+------------------------------*/
+
+nav ul li a{
+    padding:12px 18px;
+    border-radius:12px;
+}
+
+nav ul li a:hover{
+
+    background:#e9f8ef;
+
+    color:#16a34a;
+
+}
+
+/* -----------------------------
+   Welcome Section
+------------------------------*/
+
+.welcome{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    margin-bottom:30px;
+
+    color:#1f2a56;
+
+}
+
+.welcome span{
+
+    color:#16a34a;
+
+}
+
+/* -----------------------------
+   Category Badges
+------------------------------*/
+
+.badge-food{
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+}
+
+.badge-shopping{
+
+    background:#ede9fe;
+
+    color:#4f46e5;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+}
+
+.badge-travel{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+}
+
+.badge-health{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+}
+
+/* -----------------------------
+   Scrollbar
+------------------------------*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f3f4f6;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#16a34a;
+
+    border-radius:20px;
+
+}
+
+/* -----------------------------
+   Responsive
+------------------------------*/
+
+@media(max-width:992px){
+
+    nav{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    nav h1{
+
+        font-size:42px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+
+    }
+
+    .dashboard-cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .container{
+
+        width:95%;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+    button{
+
+        font-size:18px;
+
+    }
+
+    h2{
+
+        font-size:30px;
+
+    }
+
+}
+
+/* -----------------------------
+   Dark Theme Support
+------------------------------*/
+
+body.dark{
+
+    background:#111827;
+
+    color:white;
+
+}
+
+body.dark header{
+
+    background:#1f2937;
+
+}
+
+body.dark .card{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+body.dark table{
+
+    background:#1f2937;
+
+}
+
+body.dark table th{
+
+    background:#374151;
+
+    color:white;
+
+}
+
+body.dark table td{
+
+    color:white;
+
+    border-color:#4b5563;
+
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea{
+
+    background:#374151;
+
+    color:white;
+
+    border:1px solid #4b5563;
+
+}
+
+body.dark nav ul li a{
+
+    color:white;
+
+}
+
+body.dark nav ul li a:hover{
+
+    background:#374151;
+
+}
+
+body.dark footer{
+
+    color:#d1d5db;
+
+}

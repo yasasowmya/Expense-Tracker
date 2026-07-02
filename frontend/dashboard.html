@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<h1>Expense Tracker</h1>
+
+<ul>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="expense.html">Expenses</a></li>
+<li><a href="reports.html">Reports</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="index.html">Logout</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h2>Welcome 👋</h2>
+
+<div class="dashboard-cards">
+
+<div class="card">
+
+<h3>Total Expenses</h3>
+
+<h1 id="totalExpense">₹0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Monthly Budget</h3>
+
+<h1 id="monthlyBudget">₹0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Remaining Budget</h3>
+
+<h1 id="remainingBudget">₹0</h1>
+
+</div>
+
+<div class="card">
+
+<h3>Total Transactions</h3>
+
+<h1 id="totalTransactions">0</h1>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Recent Transactions</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Expense</th>
+
+<th>Category</th>
+
+<th>Amount</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recentTable">
+
+</tbody>
+
+</table>
+
+<br>
+
+<a href="expense.html">
+
+<button>Add Expense</button>
+
+</a>
+
+</div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
