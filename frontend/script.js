@@ -30,6 +30,7 @@ async function saveExpense() {
     }
 
     const expense = {
+        email: localStorage.getItem("email"),
         name,
         category,
         amount,
@@ -98,9 +99,11 @@ async function saveExpense() {
 
 }
 async function loadExpenses() {
+    const email = localStorage.getItem("email");
 
-    const response = await fetch("https://expense-tracker-5mtw.onrender.com/expenses");
-
+    const response = await fetch(
+        `https://expense-tracker-5mtw.onrender.com/expenses/${email}`
+    );
     let expenses = await response.json();
 
     const search = searchInput.value.toLowerCase();

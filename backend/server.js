@@ -136,6 +136,8 @@ app.post("/expenses", async (req, res) => {
 
     const expense = new Expense({
 
+        email: req.body.email,
+
         name: req.body.name,
 
         category: req.body.category,
@@ -165,11 +167,27 @@ app.post("/expenses", async (req, res) => {
 // Get Expenses
 // ------------------------------
 
-app.get("/expenses", async (req, res) => {
+app.get("/expenses/:email", async (req, res) => {
 
-    const expenses = await Expense.find();
+    try {
 
-    res.json(expenses);
+        const expenses = await Expense.find({
+
+            email: req.params.email
+
+        });
+
+        res.json(expenses);
+
+    } catch (error) {
+
+        res.status(500).json({
+
+            message: "Error fetching expenses"
+
+        });
+
+    }
 
 });
 

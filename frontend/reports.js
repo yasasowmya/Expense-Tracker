@@ -8,8 +8,9 @@ const API = "https://expense-tracker-5mtw.onrender.com";
 
 async function loadReports() {
 
-    const response = await fetch(`${API}/expenses`);
+    const email = localStorage.getItem("email");
 
+    const response = await fetch(`${API}/expenses/${email}`);
     const expenses = await response.json();
 
     let total = 0;

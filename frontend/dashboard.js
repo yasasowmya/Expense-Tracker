@@ -10,12 +10,12 @@ const API = "https://expense-tracker-5mtw.onrender.com";
 async function loadDashboard() {
 
     // Get Expenses
-    const response = await fetch(`${API}/expenses`);
+    const email = localStorage.getItem("email");
+    const response = await fetch(`${API}/expenses/${email}`);
     const expenses = await response.json();
 
     // Get Profile
-    const email = localStorage.getItem("email");
-
+    
     const profileResponse = await fetch(`${API}/profile/${email}`);
     const profile = await profileResponse.json();
 
