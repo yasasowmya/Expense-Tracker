@@ -152,8 +152,10 @@ async function loadExpenses() {
 
 }
 window.editExpense = async function(id) {
-
-    const response = await fetch("https://expense-tracker-5mtw.onrender.com/expenses");
+    const email = localStorage.getItem("email");
+    const response = await fetch(
+        `https://expense-tracker-5mtw.onrender.com/expenses/${email}`
+    );
 
     const expenses = await response.json();
 
