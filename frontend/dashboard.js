@@ -4,34 +4,31 @@ const remainingBudget = document.getElementById("remainingBudget");
 const totalTransactions = document.getElementById("totalTransactions");
 const recentTable = document.getElementById("recentTable");
 
+// Your Render backend URL
+const API = "https://expense-tracker-5mtw.onrender.com";
+
 async function loadDashboard() {
 
     // Get Expenses
-    const response = await fetch("http://localhost:5000/expenses");
-
+    const response = await fetch(`${API}/expenses`);
     const expenses = await response.json();
 
     // Get Profile
     const email = localStorage.getItem("email");
-    const profileResponse = await fetch(
-    `http://localhost:5000/profile/${email}`);
 
+    const profileResponse = await fetch(`${API}/profile/${email}`);
     const profile = await profileResponse.json();
 
     let total = 0;
 
     expenses.forEach((expense) => {
-
         total += Number(expense.amount);
-
     });
 
     totalExpense.innerText = "₹" + total;
-
     monthlyBudget.innerText = "₹" + (profile.budget || 0);
 
     const remaining = (Number(profile.budget) || 0) - total;
-
     remainingBudget.innerText = "₹" + remaining;
 
     totalTransactions.innerText = expenses.length;
@@ -39,7 +36,6 @@ async function loadDashboard() {
     recentTable.innerHTML = "";
 
     expenses.slice(-5).reverse().forEach((expense) => {
-
         recentTable.innerHTML += `
         <tr>
             <td>${expense.name}</td>
@@ -48,7 +44,6 @@ async function loadDashboard() {
             <td>${expense.date}</td>
         </tr>
         `;
-
     });
 
 }

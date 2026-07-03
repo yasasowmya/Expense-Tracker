@@ -38,7 +38,7 @@ async function saveExpense() {
 
     if (editId == null) {
 
-        await fetch("http://localhost:5000/expenses", {
+        await fetch("https://expense-tracker-5mtw.onrender.com/expenses", {
 
             method: "POST",
 
@@ -60,7 +60,7 @@ async function saveExpense() {
         alert("Click OK to update the expense.");
         await fetch(
 
-            "http://localhost:5000/expenses/" + editId,
+            await fetch("https://expense-tracker-5mtw.onrender.com/expenses/" + editId,
 
             {
 
@@ -98,7 +98,7 @@ async function saveExpense() {
 }
 async function loadExpenses() {
 
-    const response = await fetch("http://localhost:5000/expenses");
+    const response = await fetch("https://expense-tracker-5mtw.onrender.com/expenses");
 
     let expenses = await response.json();
 
@@ -149,7 +149,7 @@ async function loadExpenses() {
 }
 window.editExpense = async function(id) {
 
-    const response = await fetch("http://localhost:5000/expenses");
+    const response = await fetch("https://expense-tracker-5mtw.onrender.com/expenses");
 
     const expenses = await response.json();
 
@@ -199,7 +199,7 @@ window.deleteExpense = async function(id) {
 
     await fetch(
 
-        "http://localhost:5000/expenses/" + id,
+        "https://expense-tracker-5mtw.onrender.com/expenses/" + id,
 
         {
 

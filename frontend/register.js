@@ -1,5 +1,8 @@
 const registerButton = document.getElementById("registerBtn");
 
+// Render Backend URL
+const API = "https://expense-tracker-5mtw.onrender.com";
+
 registerButton.addEventListener("click", registerUser);
 
 async function registerUser() {
@@ -11,27 +14,19 @@ async function registerUser() {
     const password = document.getElementById("password").value;
 
     const user = {
-
         name,
         email,
         salary,
         budget,
         password
-
     };
 
-    const response = await fetch("http://localhost:5000/register", {
-
+    const response = await fetch(`${API}/register`, {
         method: "POST",
-
         headers: {
-
             "Content-Type": "application/json"
-
         },
-
         body: JSON.stringify(user)
-
     });
 
     const data = await response.json();
@@ -39,9 +34,6 @@ async function registerUser() {
     alert(data.message);
 
     if (data.success) {
-
         window.location.href = "index.html";
-
     }
-
 }
