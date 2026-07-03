@@ -61,7 +61,7 @@ async function saveExpense() {
         alert("Click OK to update the expense.");
         await fetch(
 
-            await fetch("https://expense-tracker-5mtw.onrender.com/expenses/" + editId,
+            "https://expense-tracker-5mtw.onrender.com/expenses/" + editId,
 
             {
 
