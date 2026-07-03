@@ -1,4 +1,5 @@
 const button = document.getElementById("addExpenseBtn");
+console.log("script loaded");
 const table = document.getElementById("expenseTable");
 const searchInput = document.getElementById("searchExpense");
 const filterCategory = document.getElementById("filterCategory");
@@ -16,7 +17,7 @@ if (filterCategory) {
 }
 
 async function saveExpense() {
-
+    alert("Button clicked");
     const name = document.getElementById("expenseName").value;
     const category = document.getElementById("expenseCategory").value;
     const amount = document.getElementById("expenseAmount").value;
