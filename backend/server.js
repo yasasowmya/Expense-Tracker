@@ -31,12 +31,12 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use(express.static(__dirname + "/../frontend"));
+
 // Home Route
 
 app.get("/", (req, res) => {
-
-    res.send("Expense Tracker Backend is Running!");
-
+    res.sendFile(__dirname + "/../frontend/index.html");
 });
 
 
